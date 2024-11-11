@@ -10,6 +10,7 @@ defmodule ApiE.Application do
     children = [
       # Starts a worker by calling: ApiE.Worker.start_link(arg)
       # {ApiE.Worker, arg}
+      {Plug.Cowboy, scheme: :http, plug: ApiE.Router, options: [port: 4000]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
